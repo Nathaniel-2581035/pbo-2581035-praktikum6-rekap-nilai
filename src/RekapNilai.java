@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class rekap_nilai {
+public class RekapNilai {
     static final int selesai = -1;
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -9,7 +9,6 @@ public class rekap_nilai {
 
         System.out.println("=== REKAP NILAI ===");
         System.out.println("Ketik -1 jika sudah selesai");
-
 
         do {
             System.out.print("Nilai ke-" + (jumlahSah + 1) + ": ");
@@ -24,6 +23,20 @@ public class rekap_nilai {
             continue;
         }
         jumlahSah++;
+
+        char grade;
+        if (nilai >= 90) {
+            grade = 'A';
+        } else if (nilai >= 80) {
+            grade = 'B';
+        } else if (nilai >= 70) {
+            grade = 'C';
+        } else if (nilai >= 60) {
+            grade = 'D';
+        } else {
+            grade = 'E';
+        }
+         System.out.println("Grade " + grade);
         } while (nilai != selesai);
 
         System.out.println();
