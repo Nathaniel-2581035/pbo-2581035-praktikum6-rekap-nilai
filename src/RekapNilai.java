@@ -5,6 +5,7 @@ public class RekapNilai {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int jumlahSah = 0;
+        double total = 0;
         int nilai;
 
         System.out.println("=== REKAP NILAI ===");
@@ -23,6 +24,7 @@ public class RekapNilai {
             continue;
         }
         jumlahSah++;
+        total += nilai;
 
         char grade;
         if (nilai >= 90) {
@@ -48,5 +50,14 @@ public class RekapNilai {
 
         System.out.println();
         System.out.println("Nilai sah: " + jumlahSah);
+
+        if (jumlahSah == 0) {
+            System.out.println("Tidak ada nilai sah, rata-rata dan status tidak dihitung.");
+        } else {
+            double rata = total / jumlahSah;
+            String status = rata >= 60 ? "LULUS" : "TIDAK LULUS";
+            System.out.println("Rata-rata: " + String.format("%.2f", rata));
+            System.out.println("Status: " + status);
+        }
     }
 }
