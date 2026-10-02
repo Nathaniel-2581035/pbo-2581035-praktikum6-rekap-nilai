@@ -11,6 +11,7 @@ public class RekapNilai {
         System.out.println("=== REKAP NILAI ===");
         System.out.println("Ketik -1 jika sudah selesai");
 
+        // do-while lebih pas daripada while: nilai pertama harus diminta dulu sebelum ada yang bisa dinilai.
         do {
             System.out.print("Nilai ke-" + (jumlahSah + 1) + ": ");
             nilai = input.nextInt();
@@ -26,6 +27,8 @@ public class RekapNilai {
         jumlahSah++;
         total += nilai;
 
+            // Eksperimen: kalau "nilai >= 60" ditaruh paling atas, nilai 85 keluar Grade D (bukan B),
+            // karena 85 >= 60 benar duluan dan kondisi di bawahnya tidak pernah dicek lagi.
         char grade;
         if (nilai >= 90) {
             grade = 'A';
